@@ -12,17 +12,17 @@ public class Driver {
 	public static void main (String[] args) throws IntegerSetException {
 	IntegerSet set_a = new IntegerSet();
 	
-	//adds the value to the set_a
+	//add
 	set_a.add(0);
 	set_a.add(1);
 	set_a.add(2);
 	
 	System.out.println("Value of set_a is:"+ " " + set_a.toString());
 	
-	//returns smallest value of set_a
+	//smallest
 	System.out.println("Smallest value of set_a is:"+ " " + set_a.smallest());
 	
-	//returns largest value of set_a
+	//largest
 	System.out.println("Largest value of set_a is:"+ " " + set_a.largest());
 	
 	//checks contains
@@ -33,7 +33,7 @@ public class Driver {
 	set_b.add(4);
 	set_b.add(5);
 
-	//checks union
+	//union
 	System.out.println("union of set_a and set_b");
 	System.out.println("Value of set_a is:" + set_a.toString());
 	System.out.println("Value of set_b is:" + set_b.toString());
