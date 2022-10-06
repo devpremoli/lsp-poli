@@ -1,7 +1,7 @@
 package org.howard.edu.lsp.assignment4.test;
 
-import org.howard.edu.lsp.assignment5.implementation.IntegerSetException;
-import org.howard.edu.lsp.assignment5.implementation.IntegerSet;
+import org.howard.edu.lsp.assignment4.implementation.IntegerSetException;
+import org.howard.edu.lsp.assignment4.implementation.IntegerSet;
 
 /**
  * @author Prem Oli
