@@ -1,4 +1,4 @@
-package org.howard.edu.lsp.assignment5.integerset;
+package org.howard.edu.lsp.assignment5;
 
 /**
  * @author Prem Oli
