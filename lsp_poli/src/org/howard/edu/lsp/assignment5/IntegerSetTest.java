@@ -17,7 +17,7 @@ public class IntegerSetTest {
 	@DisplayName("Test case for clear")
 	public void TestClear() {
 		IntegerSet setA = new IntegerSet();
-		int[] numbers = {5, 3, 2, 0, 1};
+		int[] numbers = {10, 30, 20, 0, 10};
 		for (int i = 0; i < numbers.length; i ++) {
 			setA.add(numbers[i]);
 		}
@@ -29,52 +29,56 @@ public class IntegerSetTest {
 
 
 	@Test
-	@DisplayName("Test case for Length")
-	public void testLength() {
-	
-	IntegerSet setA= new IntegerSet();
-	int[] numbers = {80, 44, 33, 46, 5};
-	for (int i = 0; i < numbers.length; i ++) {
-		setA.add(numbers[i]);
+	@DisplayName("Test Length")
+		public void testLength() {
+		
+		IntegerSet setA= new IntegerSet();
+		int[] numbers = {12, 22, 13, 54, 85};
+		for (int i = 0; i < numbers.length; i ++) {
+			setA.add(numbers[i]);
+		}
+		IntegerSet setB= new IntegerSet();
+		int[] numbers1 = {16, 62, 323, 524, 4565};
+		for (int i = 0; i < numbers1.length; i ++) {
+			setB.add(numbers1[i]);
+		}
+		assertEquals(5,setA.length());
+		assertEquals(5,setB.length());
+		assertEquals(setA.length(),setB.length());
 	}
-	IntegerSet setB= new IntegerSet();
-	int[] numbers1 = {101, 102, 304, 506};
-	for (int i = 0; i < numbers1.length; i ++) {
-		setB.add(numbers1[i]);
-	}
-	assertEquals(5,setA.length());
-	assertEquals(4,setB.length());
-	assertNotEquals(setA.length(),setB.length());
-}
 
 
 	@Test
 	@DisplayName("Test case for Equals")
 	public void testEquals() {
 	IntegerSet setA= new IntegerSet();
-	int[] numbers = {11, 22, 33, 44, 55};
+	int[] numbers = {10, 2, 23, 34, 78};
 	for (int i = 0; i < numbers.length; i ++) {
 		setA.add(numbers[i]);
 	}
 	IntegerSet setB= new IntegerSet();
-	int[] numbers1 = {11, 22, 33, 44, 55};
+	int[] numbers1 = {10, 2, 23, 34, 78};
 	for (int i = 0; i < numbers1.length; i ++) {
 		setB.add(numbers1[i]);
 	}
+	
 	assertEquals(setA.toString(),setB.toString());
+	setA.clear();
+	setB.clear();
+	assertEquals(setA.toString(), setB.toString());
 	}
 
 	@Test
 	@DisplayName("Test case for Contains")
 	public void TestContains() {
 		IntegerSet setA= new IntegerSet();
-		int[] numbers = {11,22,33,44,55};
+		int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
 		for (int i = 0; i < numbers.length; i ++) {
 			setA.add(numbers[i]);
 		}
 		assertEquals(false,setA.contains(10));
-		assertEquals(true,setA.contains(33));
-		assertNotEquals(true,setA.contains(45));
+		assertEquals(true,setA.contains(3));
+		assertNotEquals(true,setA.contains(54));
 	}
 	
 
@@ -115,7 +119,7 @@ public class IntegerSetTest {
 		assertNotEquals("[30, 20, 40]", setA.toString());
 
 		IntegerSet setB = new IntegerSet();
-		int[] numbers_1 = {90, 60, 80};
+		int[] numbers_1 = {90, 60, 80, 12, 34};
 		for (int i = 0; i < numbers_1.length; i ++) {
 			setB.add(numbers_1[i]);
 		}
@@ -151,17 +155,17 @@ public class IntegerSetTest {
 	@DisplayName("Test case for Intersect")
 	public void testIntersect() {
 	IntegerSet setA= new IntegerSet();
-	int[] numbers = {11,22,33,44,55};
+	int[] numbers = {1, 22, 3, 94, 35};
 	for (int i = 0; i < numbers.length; i ++) {
 		setA.add(numbers[i]);
 	}
 	IntegerSet setB= new IntegerSet();
-	int[] numbers1 = {44, 55,77,88,99,00};
+	int[] numbers1 = {1, 35, 37, 78, 89, 3};
 	for (int i = 0; i < numbers1.length; i ++) {
 		setB.add(numbers1[i]);
 	}
 	setA.intersect(setB);
-	assertEquals("[44, 55]",setA.toString());
+	assertEquals("[1, 3, 35]",setA.toString());
 	assertNotEquals("[11, 22, 33, 44, 55, 66, 77, 88, 99, 00]",setA.toString());
 }
 	
@@ -180,10 +184,11 @@ public class IntegerSetTest {
 			setB.add(numbers1[i]);
 		}
 		setA.diff(setB);
-		System.out.println(setA.toString());
 		assertEquals("[20, 40]",setA.toString());
 		assertNotEquals("[10, 30, 50]", setA.toString());
 		}
+	
+	
 	@Test
 	@DisplayName("Test case for isEmpty")
 	public void TestEmpty() {
@@ -219,6 +224,7 @@ public class IntegerSetTest {
 		assertTrue(actualMessage.equals(expectedMessage));
 	}
 
+	
 	@Test
 	@DisplayName("Test case for Largest")
 	public void testLargest() throws IntegerSetException {
@@ -249,6 +255,7 @@ public class IntegerSetTest {
 		assertTrue(actualMessage.equals(expectedMessage));
 	}
 
+
 	@Test
 	@DisplayName("Test case for Smallest")
 	public void testSmallest() throws IntegerSetException {
@@ -258,13 +265,14 @@ public class IntegerSetTest {
 		setA.add(numbers[i]);
 	}
 	IntegerSet setB= new IntegerSet();
-	int[] numbers1 = {98, 32, 23, 44,500,1000};
+	int[] numbers1 = {98, 32, 23, 44, 500,1000};
 	for (int i = 0; i < numbers1.length; i ++) {
 		setB.add(numbers1[i]);
 	}
-	assertEquals(1,setA.smallest());
-	assertEquals(1,setB.smallest());
+	assertEquals(18,setA.smallest());
+	assertEquals(23,setB.smallest());
 	}
+
 
 	@Test
 	@DisplayName("Test case for smallest throws exception")
