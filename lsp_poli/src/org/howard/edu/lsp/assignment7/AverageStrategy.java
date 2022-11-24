@@ -1,8 +1,22 @@
 package org.howard.edu.lsp.assignment7;
 import java.util.List;
 
+ /**
+ * @author devpremoli
+ *
+ */
 
 public interface AverageStrategy {
-	public int computeGrade (List<Integer> grades) throws EmptyListException;
-	public int computeDroppedGrade (List<Integer> grades) throws EmptyListException;
+	/**
+	 * @param grades
+	 * @return
+	 * @throws EmptyListException
+	 */
+	public int ComputeGrade (List<Integer> grades) throws EmptyListException;
+	/**
+	 * @param grades
+	 * @return
+	 * @throws EmptyListException
+	 */
+	public int ComputeDroppedGrade (List<Integer> grades) throws EmptyListException;
 }

@@ -2,11 +2,9 @@ package org.howard.edu.lsp.assignment7;
 import java.util.Collections;
 import java.util.List;
 
-
 public class Grade implements AverageStrategy{
-	
 	@Override
-	public int computeGrade(List<Integer> grades) throws EmptyListException {
+	public int ComputeGrade(List<Integer> grades) throws EmptyListException {
 		
         if(grades == null || grades.size() <= 0) {
             throw new EmptyListException();
@@ -21,7 +19,7 @@ public class Grade implements AverageStrategy{
 
 	
 	@Override
-	public int computeDroppedGrade(List<Integer> grades) throws EmptyListException {
+	public int ComputeDroppedGrade(List<Integer> grades) throws EmptyListException {
 		
         if(grades == null || grades.size() < 2) {
             throw new EmptyListException();
